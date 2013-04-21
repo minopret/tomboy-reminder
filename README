@@ -1,0 +1,62 @@
+Tomboy Reminder Plugin
+----------------------
+
+Requirements
+------------
+This plugin requires:
+tomboy-0.10 or higher
+
+Build and Install
+-----------------
+Simply run
+
+./configure
+make
+make install (as root)
+
+It should install the tomboy-reminder in the tomboy addins directory.
+You can then enable it via the tomboy interface.
+
+Using the Reminder
+------------------
+To use the plugin simply write a note and when you want to be reminded for
+this note, you have two options:
+    - put somewhere a "!" followed by a date at which tomboy will
+      show a popup with the note content at specified date.
+    - write "remind date" or "alert date" or "rappel date"
+    
+The date format is quite loose you can write anything like:
+	4th july
+	2005/05/03
+	5th
+	3 september 05
+	next monday
+	monday
+
+Starting from v0.5 you can alo use time in the date, both 12- and 24-hour times
+are recognized, for example:
+	12am
+	23:34
+	10h
+	10h am
+
+You can also combine the two:
+	3 july at 12am
+	2004/04/02 a 22:50
+	monday @ 2h am
+
+In general just write down the date and time as you would naturally it should
+work, if not, it's a bug ;)
+
+You can NOT use the "american" or "european" date format "mm/dd/yyyy"
+or "dd/mm/yyy" because it is not clear wether the first two digits are
+months or days.
+
+Tomboy will scan all the notes shortly after being started and when a note is closed.
+* When a date is found, the note will popup that date starting at 00:00 and every
+  30min when you close it.
+* When a time is found the note will popup at the given time the same day, only once
+* When both time and date are found, the note will popup the specified date at the
+  specified time, only once
+
+Please submit me by mail your problems/comments/suggestions/bugs/etc (in AUTHORS file)

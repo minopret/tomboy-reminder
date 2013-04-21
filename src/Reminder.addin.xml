@@ -1,0 +1,22 @@
+<Addin id="Reminder"
+	namespace="Tomboy"
+	name="Reminder"
+	author="Raphael Slinckx"
+	description="Allows you to tell Tomboy to pop up a note when you want to be reminded"
+	category="Tools"
+	defaultEnabled="false"
+	version="0.9.1">
+
+	<Runtime>
+		<Import assembly="tomboy-reminder.dll" />
+	</Runtime>
+
+	<Dependencies>
+		<Addin id="Tomboy" version="0.10" />
+	</Dependencies>
+
+	<Extension path="/Tomboy/NoteAddins">
+		<NoteAddin type="Tomboy.Reminder.Reminder" />
+	</Extension>
+	
+</Addin>
